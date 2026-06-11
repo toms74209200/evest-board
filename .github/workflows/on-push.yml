@@ -1,0 +1,25 @@
+name: On Push
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+concurrency:
+  group: pages-deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  test-small:
+    uses: ./.github/workflows/job-test-small.yml
+
+  deploy:
+    needs:
+      - test-small
+    uses: ./.github/workflows/job-deploy-pages.yml
