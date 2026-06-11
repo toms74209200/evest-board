@@ -1,5 +1,7 @@
 # evest-board
 
+![Online shop order flow example](docs/example-online-shop.png)
+
 A tool for storing an event storming whiteboard as a highly portable plain text DSL.
 
 ## Features
