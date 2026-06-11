@@ -1,0 +1,24 @@
+name: Job - Test (small size)
+
+on:
+  workflow_call:
+
+jobs:
+  test:
+    name: Run Small Tests
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: "npm"
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Tests
+        run: npm run test:small
