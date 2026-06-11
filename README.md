@@ -6,6 +6,8 @@ A tool for storing an event storming whiteboard as a highly portable plain text 
 
 ## Features
 
+![Screenshot](docs/screenshot.png)
+
 - Direct-manipulation whiteboard: place notes from a palette, drag to move, and pan/zoom the canvas
 - 8 note types (domain event, command, actor, aggregate, policy, read model, external system, hotspot) following event storming vocabulary
 - Arrows are drawn by dragging between note anchors and are automatically validated against connection rules (solid = conforming, dashed = exception)
